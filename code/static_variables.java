@@ -2,9 +2,27 @@
 
 import java.util.*;
 
+class Actor {
+
+	//RULE 1: Member Variables can be accessed
+	//only through object references
+
+	String name;
+
+	//RULE 2:Static Variables can be accessed
+	//through a.Class Name and
+	// b.Object Reference
+	//It is NOT recommended to use object reference
+	//to refer to static variables.
+
+	static int count;
+
+	}
+
 public class static_variables {
 
 	public static void main(String args[]) {
+		
 		Actor actor1 = new Actor();
 		actor1.name = "ACTOR1";
 
@@ -29,19 +47,14 @@ public class static_variables {
 	}
 }
 
-class Actor {
+/*output
+ * ACTOR1
+ACTOR2
+2
+2
+2
+*/
+ */
 
-	//RULE 1: Member Variables can be accessed
-	//only through object references
 
-	String name;
-
-	//RULE 2:Static Variables can be accessed
-	//through a.Class Name and
-	// b.Object Reference
-	//It is NOT recommended to use object reference
-	//to refer to static variables.
-
-	static int count;
-
-	}
+	 
