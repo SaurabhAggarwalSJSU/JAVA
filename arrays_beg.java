@@ -1,9 +1,16 @@
 import java.util.*;
+import java.util.Arrays;
 
 public class arrays_beg {
 
 	public static void main(String args[]) {
 
+		array_basics();
+		arrayList_with_arrays();
+
+	} // void main ends here
+
+	public static void array_basics() {
 		int arr[] = new int[50];
 		arr[0] = 1;
 		arr[1] = 2;
@@ -52,6 +59,37 @@ public class arrays_beg {
 		// System.out.println(Arrays .equals(numbers1, numbers2)); //false
 		// Arrays.sort(rollNos);
 		// System.out.println(Arrays.toString(rollNos));//[5, 7, 9, 12]
+	}
+
+	public static void arrayList_with_arrays() {
+
+		// array members are accessed using [],
+		// while ArrayList has a set of methods to access elements and modify them.
+
+		// Need to specify the size for array
+		int[] arr = new int[3];
+		arr[0] = 1;
+		arr[1] = 2;
+		arr[2] = 3;
+		// We cannot add more elements to array arr[]
+
+		/* ............ArrayList.............. */
+		// Need not to specify size
+		ArrayList<Integer> arrL = new ArrayList<Integer>();
+		arrL.add(1);
+		arrL.add(2);
+		arrL.add(3);
+		arrL.add(4);
+		// We can add more elements to arrL
+
+		// When we do arraylist.add(1); : it converts the primitive int data type into
+		// an Integer object
+		// not allowed (Uncommenting below line causes
+		// compiler error)
+		// ArrayList<char> arrL = new ArrayList<char>();
+		ArrayList<Integer> arrL1 = new ArrayList<>();
+		ArrayList<String> arrL2 = new ArrayList<>();
+		ArrayList<Object> arrL3 = new ArrayList<>();
 
 		// Array List for array of objects
 		// If you are unsure of the size of the array or if it can change you can do
@@ -67,12 +105,64 @@ public class arrays_beg {
 		arrayObjects[1] = new People_Class_02("name2", 2, "3");
 		arrayObjects[2] = new People_Class_02("name3", 2, "3");
 		System.out.println("Array of Objects at 0th is " + arrayObjects[0]);
-		
-		
+	}
 
-	} // void main ends here
+	public static int[] array_basics_01(int[] arr) {
 
-//main Class ends here
+		int intArr[] = { 10, 20, 15, 22, 35 };
+		int intArr1[] = { 10, 15, 22 };
+
+		byte byteArray[];
+		char charArray[];
+		Person_Class arr_obj[];
+		Object arr_obj_array[];
+		Collections arr_coll[];
+
+		int[][] intArray = new int[10][20]; // a 2D array or matrix
+		int[][][] intArray_3 = new int[10][20][10]; // a 3D array
+
+		int cloneArray[][] = intArray.clone();
+
+		// will print false as deep copy is created
+		System.out.println(intArray == cloneArray); // false
+		System.out.println(intArray[0] == cloneArray[0]); // true
+
+		// change index of array in java using maps
+		Map<String, String> fruitMap = new HashMap<>();
+		fruitMap.put("orange", "orange");
+		// Fruit[orange] = orange not possible
+
+		// ARRAYS CLASS:
+		Arrays.asList(intArr);
+		Arrays.sort(intArr);
+		Arrays.binarySearch(intArr, 1);
+		// int a = Arrays.compare(intArr, intArr199);
+		Arrays.copyOf(intArr, 10);
+		Arrays.copyOfRange(intArr, 1, 3);
+		// Arrays.deepEquals(intArr, intArr1);
+		// Arrays.equals(intArr, intArr1)
+		Arrays.sort(intArr); // in ascending order.
+		// for descending order reverse the array sorted or print using back for loop
+		// Arrays.sort(intArr, 1, 3);
+		Arrays.toString(intArr);// [10, 20, 15, 22, 35]
+
+		// final int arr[] = {1, 2, 3, 4, 5}; // Note: arr is final
+		// he array arr is declared as final, but the elements of array are changed
+		// without any problem.
+		// arr[i] = arr[i]*10; ok
+
+		// So a final array means that the array variable which is actually a reference
+		// to an object, cannot be changed to refer to anything else, but the members of
+		// array can be modified.
+
+		return new int[] { 1, 2, 3 };
+	}
+
+	public static void array_operations() {
+
+	}
+
+	// main Class ends here
 }
 
 class Person_Class {
@@ -86,7 +176,7 @@ class Person_Class {
 		this.age = age;
 	}
 
-	// wheneevr SOP of object is done, rather than some random number name is
+	// whenever SOP of object is done, rather than some random number name is
 	// returned instead
 	@Override
 	public String toString() {
