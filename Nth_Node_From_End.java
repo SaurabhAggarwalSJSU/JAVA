@@ -1,6 +1,5 @@
 
-// Java program to find n'th node from end using slow and 
-// fast pointers 
+// Java program to find n'th node from end
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -32,6 +31,7 @@ public class Nth_Node_From_End {
 		Node temp = head;
 
 		// 1) count the number of nodes in Linked List
+		// Just that we need to traverse entire LL once to get it's length:
 		while (temp != null) {
 			temp = temp.next;
 			len++;
